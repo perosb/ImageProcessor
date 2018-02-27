@@ -1,4 +1,2 @@
-pngquant --quality=90-99 --output %2 %1 --force
 if not exist %2 copy %1 %2 /y
-
-truepng %2 /o4 
+pingo.exe -pngfilter=1 -s8 -noconversion -verbose=3 %2

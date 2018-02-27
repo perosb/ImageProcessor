@@ -124,7 +124,9 @@ namespace ImageProcessor.Web.Plugins.PostProcessor
                 WorkingDirectory = PostProcessorBootstrapper.Instance.WorkingPath,
                 Arguments = arguments,
                 UseShellExecute = false,
-                CreateNoWindow = true
+                CreateNoWindow = true,
+                RedirectStandardError = true,
+                RedirectStandardOutput = true
             };
 
             Process process = null;
@@ -143,6 +145,9 @@ namespace ImageProcessor.Web.Plugins.PostProcessor
                 };
 
                 process.Start();
+
+                string output = process.StandardOutput.ReadToEnd();
+                string error = process.StandardError.ReadToEnd();
 
                 // Wait for processing to finish, but not more than our timeout.
                 if (!process.WaitForExit(timeout))

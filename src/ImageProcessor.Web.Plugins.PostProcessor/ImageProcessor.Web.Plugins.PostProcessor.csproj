@@ -64,9 +64,6 @@
     <EmbeddedResource Include="Resources\Unmanaged\x86\jpegtran.exe" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Unmanaged\x86\pngquant.exe" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ImageProcessor.Web\ImageProcessor.Web.csproj">
       <Project>{d011a778-59c8-4bfa-a770-c350216bf161}</Project>
       <Name>ImageProcessor.Web</Name>
@@ -83,7 +80,7 @@
     <EmbeddedResource Include="Resources\Unmanaged\x86\cjpeg.exe" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Unmanaged\x86\TruePNG.exe" />
+    <EmbeddedResource Include="Resources\Unmanaged\x86\pingo.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
