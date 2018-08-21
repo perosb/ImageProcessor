@@ -225,21 +225,10 @@ namespace ImageProcessor.Web.Plugins.PostProcessor
 
             switch (ext)
             {
-                case ".png":
-                    return string.Format(CultureInfo.CurrentCulture, "/c png.cmd \"{0}\" \"{1}\"", sourceFile, destinationFile);
-
                 case ".jpg":
                 case ".jpeg":
-
-                    // If it's greater than 10Kb use progressive
-                    // http://yuiblog.com/blog/2008/12/05/imageopt-4/
-                    if (length > 10000)
-                    {
-                        return string.Format(CultureInfo.CurrentCulture, "/c cjpeg -quality 80,60 -smooth 5 -outfile \"{1}\" \"{0}\"", sourceFile, destinationFile);
-                    }
-
-                    return string.Format(CultureInfo.CurrentCulture, "/c jpegtran -copy all -optimize -outfile \"{1}\" \"{0}\"", sourceFile, destinationFile);
-
+                case ".png":
+                    return string.Format(CultureInfo.CurrentCulture, "/c png.cmd \"{0}\" \"{1}\"", sourceFile, destinationFile);
                 case ".gif":
                     return string.Format(CultureInfo.CurrentCulture, "/c gifsicle --optimize=3 \"{0}\" --output=\"{1}\"", sourceFile, destinationFile);
             }
